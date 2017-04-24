@@ -1,13 +1,13 @@
 {
-  "name": "skeleton-esnext-webpack",
+  "name": "AureliaProj",
   "version": "1.0.0",
-  "description": "A starter kit for building a standard navigation-style app with Aurelia and Webpack.",
+  "description": "A standard navigation-style app with Aurelia and Webpack.",
   "main": "dist/app.bundle.js",
   "repository": {
     "url": "git+ssh://git@github.com/aurelia/skeleton-navigation.git",
     "type": "git"
   },
-  "author": "Bazyli Brzóska <bazyli.brzoska@gmail.com> (https://invent.life/)",
+  "author": "Stanislav Pribytkovsky",
   "license": "CC0-1.0",
   "engines": {
     "node": ">= 6.0.0"

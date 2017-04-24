@@ -1,14 +1,35 @@
-import {PLATFORM} from 'aurelia-pal';
+import { PLATFORM } from 'aurelia-pal';
+import { HttpClient } from 'aurelia-http-client';
 
 export class App {
-  configureRouter(config, router) {
-    config.title = 'Aurelia';
-    config.map([
-      { route: ['', 'welcome'], name: 'welcome',      moduleId: PLATFORM.moduleName('./welcome'),      nav: true, title: 'Welcome' },
-      { route: 'users',         name: 'users',        moduleId: PLATFORM.moduleName('./users'),        nav: true, title: 'Github Users' },
-      { route: 'child-router',  name: 'child-router', moduleId: PLATFORM.moduleName('./child-router'), nav: true, title: 'Child Router' },
-    ]);
+  constructor() {
+    this.message = "";
+    this.http = new HttpClient();
+    this.firstName = "Stan";
+    this.lastName = "Pribytkovsky";
+    this.friends = [];
+    this.potentialFriend = []
+  }
 
-    this.router = router;
+  activate() {
+    this.message = "Hello from Aurelia!";
+    // return this.http.get("../src/books.json")
+    //   .then(response => {
+    //     this.books = response.content;
+    //   });
+  }
+
+  changeMessage() {
+    if (this.message === "Hello from Aurelia!")
+      this.message = "Goodbye!";
+    else {
+      this.message = "Hello from Aurelia!";
+    }
+  }
+
+
+
+  get fullName() {
+    return `${this.firstName}, ${this.lastName}`;
   }
 }
